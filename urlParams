@@ -1,0 +1,7 @@
+router.get('/api', function(req, res) {
+  var user_id = req.param('id');
+  var token = req.param('token');
+  var geo = req.param('geo');  
+
+  res.send(user_id + ' ' + token + ' ' + geo);
+});
