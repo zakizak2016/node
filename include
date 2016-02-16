@@ -1,0 +1,8 @@
+res.render('index', { part:'partials/navbar'});
+
+<%- include(part) %>
+
+
+or simple
+
+<%- include partials/navbar %>
