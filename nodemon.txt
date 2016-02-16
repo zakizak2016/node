@@ -1,0 +1,6 @@
+package.json
+
+ "scripts": {
+    "start": "node ./bin/www",
+    "dev" : "nodemon bin/www"
+  },
