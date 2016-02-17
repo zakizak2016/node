@@ -2,3 +2,29 @@ https://scotch.io/tutorials/easy-node-authentication-setup-and-local
 
 
 http://stackoverflow.com/questions/23616371/basic-http-authentication-with-node-and-express-4
+
+
+MY AUTH
+
+MODEL
+var Firebase = require('firebase');
+var FB = new Firebase('https://nodejsapp2.firebaseio.com/');
+module.exports = function(req, res, next) {
+	if (!FB.getAuth()) {
+		res.redirect("/login");
+	}
+  return next();
+};
+
+ROUTER
+var express = require('express');
+var router = express.Router();
+var auth = require('../model/auth.js');
+
+router.get('/', auth, function(req, res, next) {
+
+	res.end('dashboard.js : ');
+});
+
+
+module.exports = router;
