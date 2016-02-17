@@ -1,0 +1,22 @@
+https://codeforgeek.com/2014/09/manage-session-using-node-js-express-4/
+
+{
+"name": "Node-Express4-Session",
+"version": "0.0.1",
+"main": "server.js",
+"dependencies": {
+"body-parser": "^1.7.0",
+"ejs": "^1.0.0",
+"express": "^4.8.7",
+"express-session": "^1.7.6"
+}
+}
+
+https://github.com/expressjs/session/issues/56
+
+app.use(session({
+    secret: cookie_secret,
+    name: cookie_name,
+    store: sessionStore, // connect-mongo session store
+    proxy: true
+}));
