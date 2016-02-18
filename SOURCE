@@ -22,3 +22,7 @@ package.json
     "start": "node ./bin/www",
     "dev" : "nodemon bin/www"
   },
+
+-----------------------------------------------------------------------------------------------------
+string to json
+var data = JSON.parse(data); 
