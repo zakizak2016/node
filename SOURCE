@@ -13,7 +13,23 @@ https://documentup.com/kriskowal/q/
 http://code.tutsplus.com/tutorials/managing-the-asynchronous-nature-of-nodejs--net-36183
 https://strongloop.com/strongblog/promises-in-node-js-with-q-an-alternative-to-callbacks/
 
-
+var Q = require('q');
+Q.fcall(function(){
+	var d = Q.defer();
+	api.get('products/823999f6fbe9b8ea', function(err, data){
+		 d.resolve(data);
+	})
+	return d.promise;
+})
+.then(function(data){
+	console.log(data);
+})
+.catch(function (error) {
+	console.log(error);
+})
+.done(function(){
+	console.log('done');
+})
 
 -----------------------------------------------------------------------------------------------------
 Express Guide
