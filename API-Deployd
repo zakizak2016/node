@@ -1,0 +1,50 @@
+var request = require('request');
+
+function Collection(url) {
+	this.url = url
+}
+Collection.prototype.request = function (options, fn) {
+	var url = this.url;
+	options.url = url + (options.url || '');  
+	request(options, function (err, res, body) {
+		if(res.statusCode >= 400) {
+			err = body || {message: 'an unknown error occurred'};
+			return fn(err);
+		}
+
+		fn(null, body);
+	});
+}
+
+var rootUrl = "http://localhost:5000/";
+
+
+module.exports = function(){
+	return {
+
+		get: function(path, callback){
+			var c = new Collection(rootUrl+path, callback);
+			return c.request({url: '?done=false'}, callback)
+		},
+		post: function(path, data, callback){
+			var c = new Collection(rootUrl+path, callback);
+			return c.request({json: data, method: 'POST'}, callback)
+		},
+		put: function(path, data, callback){
+			var c = new Collection(rootUrl+path, callback);
+			return c.request({json: data, method: 'PUT'}, callback)
+		},
+		delete: function(path, id, callback){
+			var c = new Collection(rootUrl+path, callback);
+			c.request({url: '/' + id, method: 'DELETE'}, callback)
+		}
+
+	}
+};
+
+USE
+api.put('products', data ,function(err, data){
+		console.log(data);
+		// var data = data.toString();
+		res.render('dashboard',{data:data});
+	})
