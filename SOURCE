@@ -14,6 +14,8 @@ Express Guide
 disable log
 // app.use(logger('dev'));
 
+faker data
+https://github.com/Marak/Faker.js
 
 -----------------------------------------------------------------------------------------------------
 nodemon
