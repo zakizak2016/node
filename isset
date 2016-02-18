@@ -1,3 +1,0 @@
-<% if (typeof user!='undefined') { %>
-		<h2><%= user %></h2>
-		<% } %>
