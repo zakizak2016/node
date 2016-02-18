@@ -1,2 +1,18 @@
 Improving the Module Factory Pattern in Node.js
 http://psteeleidem.com/node-module-factory-pattern/
+
+
+
+Express Guide
+-----------------------------------------------------------------------------------------------------
+disable log
+// app.use(logger('dev'));
+
+
+-----------------------------------------------------------------------------------------------------
+nodemon
+package.json
+ "scripts": {
+    "start": "node ./bin/www",
+    "dev" : "nodemon bin/www"
+  },
