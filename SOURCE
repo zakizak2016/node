@@ -2,6 +2,13 @@ App Structure
 https://www.terlici.com/2014/08/25/best-practices-express-structure.html
 http://thejackalofjavascript.com/re-architecting-a-firebase-app-in-node/
 
+-----------------------------------------------------------------------------------------------------
+// SECURITY
+https://blog.liftsecurity.io/2012/12/07/writing-secure-express-js-apps
+https://nvisium.com/blog/2015/03/12/nodejs-put-helmet-on/
+
+
+-----------------------------------------------------------------------------------------------------
 
 Modul Factory
 http://www.sitepoint.com/understanding-module-exports-exports-node-js/
