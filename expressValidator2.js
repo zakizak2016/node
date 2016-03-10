@@ -8,8 +8,21 @@ app.use(validator(validatorConfig));
 
 req.checkBody('username', 'required').isAlpha();
 req.checkBody('username', 'max_length|5').isAlpha();
-
-
+-----------------------------
+<form action="" method="POST" role="form">
+                        <legend>Login</legend>
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input name="username" value="{{form.username}}" type="text" class="form-control">
+                            {{ errors.username.msg }}
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input name="password" type="text" class="form-control">
+                            {{ errors.password.msg }}
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
 -----------------------------
 ./libraries/validator.js
 
