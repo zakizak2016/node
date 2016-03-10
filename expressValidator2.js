@@ -5,9 +5,17 @@ var validator = require('express-validator');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(validator(validatorConfig));
-
+-----------------------------
 req.checkBody('username', 'required').isAlpha();
 req.checkBody('username', 'max_length|5').isAlpha();
+var errors = req.validationErrors(true);
+
+	if(errors){
+		res.render('pages/login', { form: req.body, errors: errors});
+	}
+	else{
+		res.render('pages/login', { form: req.body });
+	}
 -----------------------------
 <form action="" method="POST" role="form">
                         <legend>Login</legend>
