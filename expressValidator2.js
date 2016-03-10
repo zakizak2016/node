@@ -22,12 +22,12 @@ var errors = req.validationErrors(true);
                         <div class="form-group">
                             <label for="">Username</label>
                             <input name="username" value="{{form.username}}" type="text" class="form-control">
-                            {{ errors.username.msg }}
+                             {% autoescape false %}{{ errors.username.msg }}{% endautoescape %}
                         </div>
                         <div class="form-group">
                             <label for="">Password</label>
                             <input name="password" type="text" class="form-control">
-                            {{ errors.password.msg }}
+                             {% autoescape false %}{{ errors.password.msg }}{% endautoescape %}
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -54,6 +54,7 @@ module.exports = {
 	    msg = msg.replace("{param}", form_validation[1]);
     }
 
+	msg = "<div class='error'>" +msg+ "</div>";
     return {
       param : formParam,
       msg   : msg,
