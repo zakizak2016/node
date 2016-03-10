@@ -11,6 +11,7 @@ req.checkBody('username', 'max_length|5').isAlpha();
 
 
 -----------------------------
+./libraries/validator.js
 
 module.exports = {
   errorFormatter: function(param, msg, value) {
@@ -43,7 +44,41 @@ module.exports = {
 
 
 var validation = {};
-validation.required				= '{field} field is required.';
+validation.notEmpty				= '{field} field is required.'; 
+// validation.isset				= '{field} field must have a value.';
+validation.isEmail			= '{field} field must contain a valid email address.';
+// validation.valid_emails			= '{field} field must contain all valid email addresses.';
+validation.isURL			= '{field} field must contain a valid URL.';
+validation.isIP				= '{field} field must contain a valid IP.';
+validation.isLength			= '{field} field must be {param} characters in length.';
+// validation.min_length			= '{field} field must be at least {param} characters in length.';
+// validation.max_length			= '{field} field cannot exceed {param} characters in length.';
+// validation.exact_length			= '{field} field must be exactly {param} characters in length.';
+validation.isAlpha				= '{field} field may only contain alphabetical characters.';
+validation.isAlphanumeric		= '{field} field may only contain alpha-numeric characters.';
+// validation.alpha_numeric_spaces	= '{field} field may only contain alpha-numeric characters and spaces.';
+// validation.alpha_dash			= '{field} field may only contain alpha-numeric characters, underscores, and dashes.';
+validation.isNumeric				= '{field} field must contain only numbers.';
+// validation.is_numeric			= '{field} field must contain only numeric characters.';
+// validation.isInt				= '{field} field must contain an integer.';
+// validation.regex_match			= '{field} field is not in the correct format.';
+validation.matches				= '{field} field does not match the {param} field.';
+// validation.differs				= '{field} field must differ from the {param} field.';
+// validation.is_unique 			= '{field} field must contain a unique value.';
+// validation.is_natural			= '{field} field must only contain digits.';
+// validation.is_natural_no_zero	= '{field} field must only contain digits and must be greater than zero.';
+// validation.decimal				= '{field} field must contain a decimal number.';
+// validation.less_than			= '{field} field must contain a number less than {param}.';
+// validation.less_than_equal_to	= '{field} field must contain a number less than or equal to {param}.';
+// validation.greater_than			= '{field} field must contain a number greater than {param}.';
+// validation.greater_than_equal_to= '{field} field must contain a number greater than or equal to {param}.';
+// validation.error_message_not_set= 'Unable to access an error message corresponding to your field name {field}.';
+// validation.in_list				= '{field} field must be one of: {param}.';
+
+
+
+/*
+validation.required				= '{field} field is required.'; 
 validation.isset				= '{field} field must have a value.';
 validation.valid_email			= '{field} field must contain a valid email address.';
 validation.valid_emails			= '{field} field must contain all valid email addresses.';
@@ -72,4 +107,4 @@ validation.greater_than			= '{field} field must contain a number greater than {p
 validation.greater_than_equal_to= '{field} field must contain a number greater than or equal to {param}.';
 validation.error_message_not_set= 'Unable to access an error message corresponding to your field name {field}.';
 validation.in_list				= '{field} field must be one of: {param}.';
-
+ */
